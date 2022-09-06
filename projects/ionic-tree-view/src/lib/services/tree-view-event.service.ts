@@ -25,7 +25,7 @@ export class TreeViewEventService {
     }
     // Check each child of item
     private checkAllChildItems(item, treeViewName) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve:any, reject) => {
             this.updateCheckedValueOfItem(
                 item,
                 this.dataService.getItemsByName(treeViewName)
@@ -46,7 +46,7 @@ export class TreeViewEventService {
 
     // Check each parent of items if all items are checked
     private checkParentItems(items: any[]) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve:any, reject) => {
             items.forEach((itemChild) => {
                 if (itemChild.items && itemChild.items.length > 0) {
                     this.checkParentItems(itemChild.items);
